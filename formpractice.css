@@ -1,7 +1,15 @@
+p.thick {
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+}
+
 form {
   /* Just to center the form on the page */
   margin: 0 auto;
-  width: 400px;
+  width: 800px;
 
   /* To see the limits of the form */
   padding: 1em;
@@ -20,13 +28,20 @@ label {
   text-align: right;
 }
 
+criterialabel {
+  /* To make sure that all label have the same size and are properly align */
+  display: inline-block;
+  width: 300px;
+  text-align: right;
+}
+
 input, textarea {
   /* To make sure that all text field have the same font settings
      By default, textarea are set with a monospace font */
   font: 1em sans-serif;
 
   /* To give the same size to all text field */
-  width: 300px;
+  width: 600px;
 
   -moz-box-sizing: border-box;
        box-sizing: border-box;
