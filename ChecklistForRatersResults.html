@@ -1,0 +1,585 @@
+ <!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="ChecklistForRatersResults.css">
+<script>
+    // Called on body's `onload` event
+    function init() {
+        // Retrieving the text input's value which was stored into localStorage
+        var true_number = 0;
+        var main_true_number = 0;
+
+        var paper_title = localStorage.getItem("paper_title");
+        document.getElementById("paper").innerHTML =  "Paper: " + localStorage.getItem("paper_title");
+        var reviewer = localStorage.getItem("reviewer"); 
+        document.getElementById("reviewer").innerHTML =  "Reviewer: " + localStorage.getItem("reviewer");
+        var date = localStorage.getItem("date"); 
+        document.getElementById("date").innerHTML =  "Date: " + localStorage.getItem("date");        
+        
+        var criteria1 = localStorage.getItem("criteria1");
+        document.getElementById("criteria1result").innerHTML =  localStorage.getItem("criteria1");
+        if(localStorage.getItem("criteria1") == "True"){
+            document.getElementById("criteria1suggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+            main_true_number = main_true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria1suggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+        var criteria1a = localStorage.getItem("criteria1a");  
+        document.getElementById("criteria1aresult").innerHTML = localStorage.getItem("criteria1a");
+        if(localStorage.getItem("criteria1a") == "True"){
+            document.getElementById("criteria1asuggestion").innerHTML = "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria1asuggestion").innerHTML = "Paper does not fulfill this criteria";
+        } 
+
+        var criteria1b = localStorage.getItem("criteria1b");
+        document.getElementById("criteria1bresult").innerHTML =  localStorage.getItem("criteria1b");
+        if(localStorage.getItem("criteria1b") == "True"){
+            document.getElementById("criteria1bsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria1bsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria1c = localStorage.getItem("criteria1c"); 
+        document.getElementById("criteria1cresult").innerHTML = localStorage.getItem("criteria1c");
+        if(localStorage.getItem("criteria1c") == "True"){
+            document.getElementById("criteria1csuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+
+        } 
+        else{
+            document.getElementById("criteria1csuggestion").innerHTML =  "Paper does not fulfill this criteria";
+            true_number = true_number + 1;
+        }
+
+        var criteria1d = localStorage.getItem("criteria1d");
+        document.getElementById("criteria1dresult").innerHTML =  localStorage.getItem("criteria1d");
+        if(localStorage.getItem("criteria1d") == "True"){
+            document.getElementById("criteria1dsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria1dsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        } 
+
+        var criteria1e = localStorage.getItem("criteria1e");
+        document.getElementById("criteria1eresult").innerHTML =  localStorage.getItem("criteria1e");
+        if(localStorage.getItem("criteria1e") == "True"){
+            document.getElementById("criteria1esuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria1esuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        } 
+        var criteria1f = localStorage.getItem("criteria1f");
+        document.getElementById("criteria1fresult").innerHTML =  localStorage.getItem("criteria1f");
+        if(localStorage.getItem("criteria1f") == "True"){
+            document.getElementById("criteria1fsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria1fsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        } 
+        var criteria1comments = localStorage.getItem("criteria1comments");
+        document.getElementById("criteria1comments").innerHTML =  localStorage.getItem("criteria1comments");
+
+        var criteria2 = localStorage.getItem("criteria2");  
+        document.getElementById("criteria2result").innerHTML =  localStorage.getItem("criteria2");
+        if(localStorage.getItem("criteria2") == "True"){
+            document.getElementById("criteria2suggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+            main_true_number = main_true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria2suggestion").innerHTML =  "Paper does not fulfill this criteria";
+        } 
+
+        var criteria2a = localStorage.getItem("criteria2a");   
+        document.getElementById("criteria2aresult").innerHTML =  localStorage.getItem("criteria2a");
+        if(localStorage.getItem("criteria2a") == "True"){
+            document.getElementById("criteria2asuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria2asuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        } 
+
+        var criteria2b = localStorage.getItem("criteria2b"); 
+        document.getElementById("criteria2bresult").innerHTML =  localStorage.getItem("criteria2b");
+        if(localStorage.getItem("criteria2b") == "True"){
+            document.getElementById("criteria2bsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria2bsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria2c = localStorage.getItem("criteria2c");  
+        document.getElementById("criteria2cresult").innerHTML =  localStorage.getItem("criteria2c");
+        if(localStorage.getItem("criteria2c") == "True"){
+            document.getElementById("criteria2csuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria2csuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria2comments = localStorage.getItem("criteria2comments");
+        document.getElementById("criteria2comments").innerHTML =  localStorage.getItem("criteria2comments");
+
+        var criteria3 = localStorage.getItem("criteria3");           
+        document.getElementById("criteria3result").innerHTML =  localStorage.getItem("criteria3");
+        if(localStorage.getItem("criteria3") == "True"){
+            document.getElementById("criteria3suggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+            main_true_number = main_true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria3suggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria3a = localStorage.getItem("criteria3a");  
+        document.getElementById("criteria3aresult").innerHTML =  localStorage.getItem("criteria3a");
+        if(localStorage.getItem("criteria3a") == "True"){
+            document.getElementById("criteria3asuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria3asuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria3b = localStorage.getItem("criteria3b");  
+        document.getElementById("criteria3bresult").innerHTML =  localStorage.getItem("criteria3b");
+        if(localStorage.getItem("criteria3b") == "True"){
+            document.getElementById("criteria3bsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria3bsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria3c = localStorage.getItem("criteria3c");              
+        document.getElementById("criteria3cresult").innerHTML =  localStorage.getItem("criteria3c");
+        if(localStorage.getItem("criteria3c") == "True"){
+            document.getElementById("criteria3csuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria3csuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria3d = localStorage.getItem("criteria3d");   
+        document.getElementById("criteria3dresult").innerHTML =  localStorage.getItem("criteria3d");
+        if(localStorage.getItem("criteria3d") == "True"){
+            document.getElementById("criteria3dsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria3dsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria3e = localStorage.getItem("criteria3e"); 
+        document.getElementById("criteria3eresult").innerHTML =  localStorage.getItem("criteria3e");
+        if(localStorage.getItem("criteria3e") == "True"){
+            document.getElementById("criteria3esuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria3esuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria3comments = localStorage.getItem("criteria3comments");
+        document.getElementById("criteria3comments").innerHTML = localStorage.getItem("criteria3comments");
+
+        var criteria4 = localStorage.getItem("criteria4"); 
+        document.getElementById("criteria4result").innerHTML =  localStorage.getItem("criteria4");
+        if(localStorage.getItem("criteria4") == "True"){
+            document.getElementById("criteria4suggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+            main_true_number = main_true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria4suggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria4a = localStorage.getItem("criteria4a"); 
+        document.getElementById("criteria4aresult").innerHTML =  localStorage.getItem("criteria4a");
+        if(localStorage.getItem("criteria4a") == "True"){
+            document.getElementById("criteria4asuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria4asuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria4b = localStorage.getItem("criteria4b");  
+        document.getElementById("criteria4bresult").innerHTML =  localStorage.getItem("criteria4b");
+        if(localStorage.getItem("criteria4b") == "True"){
+            document.getElementById("criteria4bsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria4bsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria4c = localStorage.getItem("criteria4c");             
+        document.getElementById("criteria4cresult").innerHTML =  localStorage.getItem("criteria4c");
+        if(localStorage.getItem("criteria4c") == "True"){
+            document.getElementById("criteria4csuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria4csuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria4d = localStorage.getItem("criteria4d");
+        document.getElementById("criteria4dresult").innerHTML =  localStorage.getItem("criteria4d");
+        if(localStorage.getItem("criteria4d") == "True"){
+            document.getElementById("criteria4dsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria4dsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+        var criteria4comments = localStorage.getItem("criteria4comments");
+        document.getElementById("criteria4comments").innerHTML = localStorage.getItem("criteria4comments");
+
+
+        var criteria5 = localStorage.getItem("criteria5"); 
+        document.getElementById("criteria5result").innerHTML =  localStorage.getItem("criteria5");
+        if(localStorage.getItem("criteria5") == "True"){
+            document.getElementById("criteria5suggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+            main_true_number = main_true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria5suggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria5a = localStorage.getItem("criteria5a"); 
+        document.getElementById("criteria5aresult").innerHTML =  localStorage.getItem("criteria5a");
+        if(localStorage.getItem("criteria5a") == "True"){
+            document.getElementById("criteria5asuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria5asuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria5b = localStorage.getItem("criteria5b");  
+        document.getElementById("criteria5bresult").innerHTML =  localStorage.getItem("criteria5b");
+        if(localStorage.getItem("criteria5b") == "True"){
+            document.getElementById("criteria5bsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria5bsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria5c = localStorage.getItem("criteria5c");             
+        document.getElementById("criteria5cresult").innerHTML =  localStorage.getItem("criteria5c");
+        if(localStorage.getItem("criteria5c") == "True"){
+            document.getElementById("criteria5csuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria5csuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria5d = localStorage.getItem("criteria5d");
+        document.getElementById("criteria5dresult").innerHTML =  localStorage.getItem("criteria5d");
+        if(localStorage.getItem("criteria5d") == "True"){
+            document.getElementById("criteria5dsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria5dsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+        var criteria5comments = localStorage.getItem("criteria5comments");
+        document.getElementById("criteria5comments").innerHTML = localStorage.getItem("criteria5comments");
+
+        var criteria6 = localStorage.getItem("criteria6");  
+        document.getElementById("criteria6result").innerHTML =  localStorage.getItem("criteria6");
+        if(localStorage.getItem("criteria6") == "True"){
+            document.getElementById("criteria6suggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+            main_true_number = main_true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria6suggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria6a = localStorage.getItem("criteria6a"); 
+        document.getElementById("criteria6aresult").innerHTML =  localStorage.getItem("criteria6a");
+        if(localStorage.getItem("criteria6a") == "True"){
+            document.getElementById("criteria6asuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria6asuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria6b = localStorage.getItem("criteria6b"); 
+        document.getElementById("criteria6bresult").innerHTML =  localStorage.getItem("criteria6b");
+        if(localStorage.getItem("criteria6b") == "True"){
+            document.getElementById("criteria6bsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria6bsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria6comments = localStorage.getItem("criteria6comments");
+        document.getElementById("criteria6comments").innerHTML = localStorage.getItem("criteria6comments");
+
+        var criteria7 = localStorage.getItem("criteria7");  
+        document.getElementById("criteria7result").innerHTML =  localStorage.getItem("criteria7");
+        if(localStorage.getItem("criteria7") == "True"){
+            document.getElementById("criteria7suggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+            main_true_number = main_true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria7suggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+        var criteria7a = localStorage.getItem("criteria7a"); 
+        document.getElementById("criteria7aresult").innerHTML =  localStorage.getItem("criteria7a");
+        if(localStorage.getItem("criteria7a") == "True"){
+            document.getElementById("criteria7asuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria7asuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+        var criteria7b = localStorage.getItem("criteria7b");  
+        document.getElementById("criteria7bresult").innerHTML =  localStorage.getItem("criteria7b");
+        if(localStorage.getItem("criteria7b") == "True"){
+            document.getElementById("criteria7bsuggestion").innerHTML =  "None- the paper fulfills this criteria!";
+            true_number = true_number + 1;
+        } 
+        else{
+            document.getElementById("criteria7bsuggestion").innerHTML =  "Paper does not fulfill this criteria";
+        }
+
+        var criteria7comments = localStorage.getItem("criteria7comments");
+        document.getElementById("criteria7comments").innerHTML = localStorage.getItem("criteria7comments");
+
+        var total_p= 100*(true_number/33);
+        var total_percentage = total_p.toFixed(2); 
+        document.getElementById("overallpercentage").innerHTML = "This paper fulfills " + true_number + " of the 33 total criteria; " + total_percentage + " percent.";
+        document.getElementById("mainpercentage").innerHTML = "This paper fulfills " + main_true_number + " of the 7 lead guidelines.";
+    }
+
+</script>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+</head>    
+
+<body onload="init()">
+
+<h1>The Criteria for Useful Science Checklist: Results</h1> 
+<h2 id = "paper"></h2>
+<h2 id = "reviewer"></h2>
+<h2 id = "date"></h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Criteria</th>
+    <th>Result</th> 
+    <th>Suggestions</th>
+    <th>Rater Comments</th>
+  </tr>
+
+  <tr id = "criteria1">
+    <td width="35%"><strong> 1. Findings are useful</strong></td>
+    <td width="10%" id = "criteria1result"></td>
+    <td width="23%" id = "criteria1suggestion">50</td>
+    <td width="32%" id = "criteria1comments" rowspan="7"></td>
+  </tr>
+  <tr id = "criteria1a">
+    <td >1a) Importance of problem explained by title, abstract, result tables, or conclusions</td>
+    <td id = "criteria1aresult"></td>
+    <td id = "criteria1asuggestion"></td>
+  </tr>
+  <tr id = "criteria1b">
+    <td>1b) Findings provide improved prediction, decision-making, policy, or methods</td>
+    <td id = "criteria1bresult"></td>
+    <td id = "criteria1bsuggestion">50</td>
+  </tr>
+    <tr id = "criteria1c">
+    <td>1c) Findings shown to be surprising to practitioners?</td>
+    <td id = "criteria1cresult"></td>
+    <td id = "criteria1csuggestion"></td>
+  </tr>
+    <tr id = "criteria1d">
+    <td>1d) Findings shown to be surprising to researchers?</td>
+    <td id = "criteria1dresult"></td>
+    <td  id = "criteria1dsuggestion">50</td>
+  </tr>
+    <tr id = "criteria1e">
+    <td>1e) Directional findings shown to be surprising?</td>
+    <td id = "criteria1eresult"></td>
+    <td  id = "criteria1esuggestion">50</td>
+  </tr>
+      <tr id = "criteria1f">
+    <td>1f) Effect size of findings shown to be surprising?</td>
+    <td id = "criteria1fresult"></td>
+    <td  id = "criteria1fsuggestion">50</td>
+  </tr>
+
+    <tr id = "criteria2">
+    <td><strong> 2. Comprehensive review of prior scientific knowledge?</strong></td>
+    <td id = "criteria2result"></td>
+    <td id = "criteria2suggestion">50</td>
+    <td id = "criteria2comments" rowspan="4"></td>
+  </tr>
+  <tr id = "criteria2a">
+    <td>2a) Search procedures shown to be objective with respect to reasonable hypotheses?</td>
+    <td id = "criteria2aresult"></td>
+    <td id = "criteria2asuggestion"></td>
+  </tr>
+  <tr id = "criteria2b">
+    <td>2b) Search procedures shown to be comprehensive with respect to reasonable hypotheses?  </td>
+    <td id = "criteria2bresult"></td>
+    <td id = "criteria2bsuggestion"></td>
+  </tr>
+    <tr id = "criteria2c">
+    <td>2c) Contacted authors who were on cited on substantive matters to ensure that the summary of their findings was correct, the references were correct, and that no key studies were overlooked. </td>
+    <td id = "criteria2cresult"></td>
+    <td id = "criteria2csuggestion"></td>
+
+    <tr id = "criteria3">
+    <td><strong> 3. Full disclosure </strong></td>
+    <td id = "criteria3result"></td>
+    <td id = "criteria3suggestion"></td>
+    <td id = "criteria3comments" rowspan="6"></td>
+  </tr>
+  <tr id = "criteria3a">
+    <td>3a) Multiple reasonable hypotheses: Prior and revisions (e.g., direction and magnitude of causal effects)? </td>
+    <td id = "criteria3aresult"></td>
+    <td id = "criteria3asuggestion"></td>
+  </tr>
+  <tr id = "criteria3b">
+    <td>3b) Conditions for hypotheses: Prior and revised? </td>
+    <td id = "criteria3bresult"></td>
+    <td id = "criteria3bsuggestion"></td>
+  </tr>
+    <tr id = "criteria3c">
+    <td>3c) Methods are fully described and easy to understand </td>
+    <td id = "criteria3cresult"></td>
+    <td id = "criteria3csuggestion"></td>
+  </tr>
+      <tr id = "criteria3d">
+    <td>3d) Data are easily accessible using information provided in the paper  </td>
+    <td id = "criteria3dresult"></td>
+    <td id = "criteria3dsuggestion"></td>
+  </tr>
+      <tr id = "criteria3e">
+    <td>3e) Other information needed for understanding (e.g. reviewers if acceptable, acknowledgements, shortcomings, potential biases) provided </td>
+    <td id = "criteria3eresult"></td>
+    <td id = "criteria3esuggestion"></td>
+  </tr>
+
+    <tr id = "criteria4">
+    <td><strong> 4. Data are valid and reliable </strong></td>
+    <td id = "criteria4result"></td>
+    <td id = "criteria4suggestion"></td>
+    <td id = "criteria4comments" rowspan="5"></td>
+  </tr>
+  <tr id = "criteria4a">
+    <td>4a) Data were shown to be relevant to the problem</td>
+    <td id = "criteria4aresult"></td>
+    <td id = "criteria4asuggestion"></td>
+  </tr>
+  <tr id = "criteria4b">
+    <td>4b) All relevant data (multiple measures) were used to help ensure validity and compensate for biases</td>
+    <td id = "criteria4bresult"></td>
+    <td id = "criteria4bsuggestion"></td>
+  </tr>
+    <tr id = "criteria4c">
+    <td>4c) Reliability of data was assessed</td>
+    <td id = "criteria4cresult"></td>
+    <td id = "criteria4csuggestion"></td>
+  </tr>
+      <tr id = "criteria4d">
+    <td>4d) Longest available series used when analyzing time series data</td>
+    <td id = "criteria4dresult"></td>
+    <td id = "criteria4dsuggestion"></td>
+  </tr>
+
+      <tr id = "criteria5">
+    <td><strong> 5. Methods were valid and simple </strong></td>
+    <td id = "criteria5result"></td>
+    <td id = "criteria5suggestion"></td>
+    <td id = "criteria5comments" rowspan="5"></td>
+  </tr>
+  <tr id = "criteria5a">
+    <td>5a) Methods were shown to be relevant for the problem, unless obvious to all</td>
+    <td id = "criteria5aresult"></td>
+    <td id = "criteria5asuggestion"></td>
+  </tr>
+  <tr id = "criteria5b">
+    <td>5b) Multiple validated methods were used</td>
+    <td id = "criteria5bresult"></td>
+    <td id = "criteria5bsuggestion"></td>
+  </tr>
+    <tr id = "criteria5c">
+    <td>5c) Methods used cumulative scientfic knowledge explicitly</td>
+    <td id = "criteria5cresult"></td>
+    <td id = "criteria5csuggestion"></td>
+  </tr>
+      <tr id = "criteria5d">
+    <td>5d) Methods were sufficiently simple for all potential users of the findings to understand </td>
+    <td id = "criteria5dresult"></td>
+    <td id = "criteria5dsuggestion"></td>
+  </tr>
+    <tr id = "criteria6">
+    <td><strong> 6. Experimental evidence was used to test all reasonable alternative hypotheses </strong></td>
+    <td id = "criteria6result"></td>
+    <td id = "criteria6suggestion"></td>
+    <td id = "criteria6comments" rowspan="3"></td>
+  </tr>
+  <tr id = "criteria6a">
+    <td>6a) All reasonable hypotheses were compared using experimental evidence under explicit conditions </td>
+    <td id = "criteria6aresult"></td>
+    <td id = "criteria6asuggestion"></td>
+  </tr>
+  <tr id = "criteria6b">
+    <td>6b) Predictive validity of hypotheses were tested using out-of-sample data </td>
+    <td id = "criteria6bresult"></td>
+    <td id = "criteria6bsuggestion"></td>
+  </tr>
+  </tr>
+    <tr id = "criteria7">
+    <td><strong> 7. Conclusions are consistent with the evidence</strong></td>
+    <td id = "criteria7result"></td>
+    <td id = "criteria7suggestion"></td>
+    <td id = "criteria7comments" rowspan="3"></td>
+  </tr>
+  <tr id = "criteria7a">
+    <td>7a) Conclusions are logically consistent with the evidence presented in the paper  </td>
+    <td id = "criteria7aresult"></td>
+    <td id = "criteria7asuggestion"></td>
+  </tr>
+  <tr id = "criteria7b">
+    <td>7b) Conclusions contribute to cumulative scientific knowlege on the problem addessed by the paper </td>
+    <td id = "criteria7bresult"></td>
+    <td id = "criteria7bsuggestion"></td>
+  </tr>
+</table>
+</body>
+
+<p id = "overallpercentage"></p>
+<p id = "mainpercentage"></p>
+
+
+
+</html>
