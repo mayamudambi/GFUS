@@ -2,18 +2,23 @@
  <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/path/to/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/path/to/jquery.qtip.css" />
+<link rel="stylesheet" type="text/css" href="ChecklistForRaters.css">
 
-  <link rel="stylesheet" type="text/css" href="ChecklistForRaters.css">
-  
 <script>
 $(document).ready(function(){
     $("#submit").click(function(){
         $("button").hide();
     });
+});
+</script>
+
+<script>
+$(".tiptext").mouseover(function() {
+    $(this).children(".description").show();
+}).mouseout(function() {
+    $(this).children(".description").hide();
 });
 </script>
 
@@ -37,16 +42,6 @@ $(document).ready(function(){
             localStorage.setItem("criteria1", criteria1);
             var criteria1a = document.getElementById("criteria1a").value;
             localStorage.setItem("criteria1a", criteria1a); 
-            var criteria1b = document.getElementById("criteria1b").value;
-            localStorage.setItem("criteria1b", criteria1b);   
-            var criteria1c = document.getElementById("criteria1c").value;
-            localStorage.setItem("criteria1c", criteria1c);   
-            var criteria1d = document.getElementById("criteria1d").value;
-            localStorage.setItem("criteria1d", criteria1d); 
-            var criteria1e = document.getElementById("criteria1e").value;
-            localStorage.setItem("criteria1e", criteria1e);
-            var criteria1f = document.getElementById("criteria1f").value;
-            localStorage.setItem("criteria1f", criteria1f);
             var criteria1comments = document.getElementById("criteria1comments").value;
             localStorage.setItem("criteria1comments", criteria1comments);
 
@@ -58,6 +53,8 @@ $(document).ready(function(){
             localStorage.setItem("criteria2b", criteria2b);  
             var criteria2c = document.getElementById("criteria2c").value;
             localStorage.setItem("criteria2c", criteria2c); 
+            var criteria2d = document.getElementById("criteria2d").value;
+            localStorage.setItem("criteria2d", criteria2d); 
             var criteria2comments = document.getElementById("criteria2comments").value;
             localStorage.setItem("criteria2comments", criteria2comments);
 
@@ -68,11 +65,7 @@ $(document).ready(function(){
             var criteria3b = document.getElementById("criteria3b").value;
             localStorage.setItem("criteria3b", criteria3b);  
             var criteria3c = document.getElementById("criteria3c").value;
-            localStorage.setItem("criteria3c", criteria3c);              
-            var criteria3d = document.getElementById("criteria3d").value;
-            localStorage.setItem("criteria3d", criteria3d);
-            var criteria3e = document.getElementById("criteria3e").value;
-            localStorage.setItem("criteria3e", criteria3e);            
+            localStorage.setItem("criteria3c", criteria3c);                          
             var criteria3comments = document.getElementById("criteria3comments").value;
             localStorage.setItem("criteria3comments", criteria3comments);
 
@@ -86,6 +79,8 @@ $(document).ready(function(){
             localStorage.setItem("criteria4c", criteria4c);             
             var criteria4d = document.getElementById("criteria4d").value;
             localStorage.setItem("criteria4d", criteria4d); 
+            var criteria4e = document.getElementById("criteria4e").value;
+            localStorage.setItem("criteria4e", criteria4e); 
             var criteria4comments = document.getElementById("criteria4comments").value;
             localStorage.setItem("criteria4comments", criteria4comments);
 
@@ -109,6 +104,10 @@ $(document).ready(function(){
             localStorage.setItem("criteria6a", criteria6a); 
             var criteria6b = document.getElementById("criteria6b").value;
             localStorage.setItem("criteria6b", criteria6b); 
+            var criteria6c = document.getElementById("criteria6c").value;
+            localStorage.setItem("criteria6c", criteria6c);
+            var criteria6d = document.getElementById("criteria6c").value;
+            localStorage.setItem("criteria6d", criteria6d);
             var criteria6comments = document.getElementById("criteria6comments").value;
             localStorage.setItem("criteria6comments", criteria6comments);
 
@@ -120,6 +119,15 @@ $(document).ready(function(){
             localStorage.setItem("criteria7b", criteria7b);          
             var criteria7comments = document.getElementById("criteria7comments").value;
             localStorage.setItem("criteria7comments", criteria7comments);
+
+            var criteria8 = document.getElementById("criteria8").value;
+            localStorage.setItem("criteria8", criteria8);             
+            var criteria8a = document.getElementById("criteria8a").value;
+            localStorage.setItem("criteria8a", criteria8a); 
+            var criteria8b = document.getElementById("criteria8b").value;
+            localStorage.setItem("criteria8b", criteria8b);          
+            var criteria8comments = document.getElementById("criteria8comments").value;
+            localStorage.setItem("criteria8comments", criteria8comments);
             }
             return true;
         }
@@ -128,6 +136,8 @@ $(document).ready(function(){
 
 </head>
 <body>
+<script type="text/javascript" src="/path/to/jquery.qtip.js"></script>
+
 <h1>The Criteria for Useful Science</h1>
 <form id="form" onsubmit="tosubmit();" action="ChecklistForRatersResults.html">
     <div>
@@ -152,209 +162,166 @@ $(document).ready(function(){
   </div>
 
   <div>
-    <p><strong> The task:</strong> Utilize the below checklist to assess the paper's compliance with each individual criterion of useful science. You, the rater, must be convinvinced of the paper&#8217;s usefulness by clear descriptions of the research process, findings, and conclusions. If you are unsure from the researchers&#8217; description whether the research complies, check False / Unclear.</p> 
+    <p><strong> The task:</strong> Raters should spend no more than 15 minutes skimming the paper in order to be able to assess compliance with the useful science criteria below. As a rater, you must be convinced of the paper&#8217;s usefulness by clear descriptions of the research process, findings, and conclusions. Check True if the research complies, not applicable (N/A), or False/Unclear if not or if you are unsure.</p> 
   </div>
   <div>
-    <p><strong> Assess compliance with lettered items under each criterion, below. Do not speculate. Then assess whether criterion 1-7 are true based on compliance with the associated items. </strong> </p> 
+    <p><strong> Assess compliance with lettered items under each criterion, below. Then assess whether criterion 1-8 are true based on compliance with the associated items. <i>Do not speculate.</i></strong></p> 
   </div>
 
   <div>
-    <criterialabel for="criteria1">1. Findings are useful (Judged based on title, abstract, result tables, or conclusions)</criterialabel>
+    <criterialabel for="criteria1">1. Design was objective (unbiased by advocacy for a preferred hypothesis) </criterialabel>
     <select id="criteria1">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
-  </div>
-  <div>
-    <subcriterialabel for="criteria1a">a) Important problem?</subcriterialabel>
-    <select id="criteria1a">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-
-  <div>
-    <subcriterialabel for="criteria1b">b) Improved understanding of causality, prediction, decision-making, policy, or methods?</subcriterialabel>
-    <select id="criteria1b">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-
-  <div>
-    <subcriterialabel for="criteria1c">c) Findings shown to be surprising to practitioners?</subcriterialabel>
-    <select id="criteria1c">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
   </div>
     <div>
-    <subcriterialabel for="criteria1d">d) Findings shown to be surprising to researchers?</subcriterialabel>
-    <select id="criteria1d">
+    <subcriterialabel for="criteria1a">a) All reasonable hypotheses, including the &quot;no change&quot; hypothesis, were represented fairly in the design </subcriterialabel>
+    <select id="criteria1a">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
-  <div>
-    <subcriterialabel for="criteria1e">e) Directional findings shown to be surprising?</subcriterialabel>
-    <select id="criteria1e">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  <div>
-    <subcriterialabel for="criteria1f">f) Effect size of findings shown to be surprising?</subcriterialabel>
-    <select id="criteria1f">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  <div>
+    <div>
     <label for="criteria1comments">Comments:</label>
     <textarea id="criteria1comments" rows="5" cols="50"></textarea>
   </div>
 
   <div>
-    <criterialabel for="criteria2">2. Comprehensive review of prior scientific knowledge?</criterialabel>
+    <criterialabel for="criteria2">2. Findings are useful (can be applied to achieve better outcomes) </criterialabel>
     <select id="criteria2">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
   <div>
-    <subcriterialabel for="criteria2a">a) Search procedures shown to be objective with respect to reasonable hypotheses?</subcriterialabel>
+    <subcriterialabel for="criteria2a">a) Importance of problem explained in the title, abstract, result tables, or conclusions </subcriterialabel>
     <select id="criteria2a">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
 
   <div>
-    <subcriterialabel for="criteria2b">b) Search procedures shown to be comprehensive with respect to reasonable hypotheses?  </subcriterialabel>
+    <subcriterialabel for="criteria2b">b) Findings provide improved prediction, decision-making, policy, or methods</subcriterialabel>
     <select id="criteria2b">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
-
   <div>
-    <subcriterialabel for="criteria2c">c) Contacted authors who were on cited on substantive matters to ensure that the summary of their findings was correct, the references were correct, and that no key studies were overlooked. </subcriterialabel>
+    <subcriterialabel for="criteria2c">c) Directional or effect size findings are presented</subcriterialabel>
     <select id="criteria2c">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
   <div>
+    <subcriterialabel for="criteria2d">d) Directional or effect size findings are <i>shown</i> to be surprising to practitioners or researchers</subcriterialabel>
+    <select id="criteria2d">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+      <div>
     <label for="criteria2comments">Comments:</label>
     <textarea id="criteria2comments" rows="5" cols="50"></textarea>
   </div>
-
   <div>
-    <criterialabel for="criteria3">3. Full disclosure </criterialabel>
+    <criterialabel for="criteria3">3. Prior scientific knowledge was comprehensively reviewed and summarized</criterialabel>
     <select id="criteria3">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
-  </div>
+  </div>  
   <div>
-    <subcriterialabel for="criteria3a">a) Multiple reasonable hypotheses: Prior and revisions (e.g., direction and magnitude of causal effects)? </subcriterialabel>
+    <subcriterialabel for="criteria3a">a) Search procedures for prior useful scientific knowledge were objective and comprehensive</subcriterialabel>
     <select id="criteria3a">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  
-  <div>
-    <subcriterialabel for="criteria3b">b) Conditions for hypotheses: Prior and revised? </subcriterialabel>
-    <select id="criteria3b">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  
-  <div>
-    <subcriterialabel for="criteria3c">c) Methods are fully described and easy to understand </subcriterialabel>
-    <select id="criteria3c">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
 
   <div>
-  <subcriterialabel for="criteria3d">d) Data are easily accessible using information provided in the paper </subcriterialabel>
-    <select id="criteria3d">
+    <subcriterialabel for="criteria3b">b) Checked with cited authors that summaries of substantive findings and references were correct</subcriterialabel>
+    <select id="criteria3b">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
+
   <div>
-    <subcriterialabel for="criteria3e">e) Other information needed for understanding (e.g. reviewers if acceptable, acknowledgements, shortcomings, potential biases) provided </subcriterialabel>
-    <select id="criteria3e">
+    <subcriterialabel for="criteria3c">c) Checked with cited authors that no key studies are overlooked</subcriterialabel>
+    <select id="criteria3c">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
   <div>
     <label for="criteria3comments">Comments:</label>
     <textarea id="criteria3comments" rows="5" cols="50"></textarea>
   </div>
+  <div>
+    <criterialabel for="criteria4">4. Disclosure is comprehensive (sufficient for understanding and replication)</criterialabel>
+    <select id="criteria4">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+  <div>
+    <subcriterialabel for="criteria4a">a) Prior hypotheses clearly described (e.g. directions and magnitudes of relationships; effects of conditions)
+</subcriterialabel>
+    <select id="criteria4a">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+  
+  <div>
+    <subcriterialabel for="criteria4b">b) Revisions to hypotheses and conditions are described</subcriterialabel>
+    <select id="criteria4b">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+  
+  <div>
+    <subcriterialabel for="criteria4c">c) Methods are fully described and easy to understand</subcriterialabel>
+    <select id="criteria4c">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
 
   <div>
-    <criterialabel for="criteria4">4. Data are valid and reliable </criterialabel>
-    <select id="criteria4">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  <div>
-    <subcriterialabel for="criteria4a">a) Data were shown to be relevant to the problem </subcriterialabel>
-    <select id="criteria4a">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  <div> 
-    <subcriterialabel for="criteria4b">b) All relevant data (multiple measures) were used to help ensure validity and compensate for biases </subcriterialabel>
-    <select id="criteria4b">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  <div>
-    <subcriterialabel for="criteria4c">c) Reliability of data was assessed</subcriterialabel>
-    <select id="criteria4c">
-      <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
-    </select>  
-  </div>
-  <div> 
-    <subcriterialabel for="criteria4d">d) Longest available series used when analyzing time series data</subcriterialabel>
+  <subcriterialabel for="criteria4d">d) Data are easily accessible using information provided in the paper </subcriterialabel>
     <select id="criteria4d">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+  <div>
+    <subcriterialabel for="criteria4e">e) Other information needed for understanding (e.g. acknowledgements, shortcomings, potential biases) provided</subcriterialabel>
+    <select id="criteria4e">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
   <div>
@@ -363,72 +330,88 @@ $(document).ready(function(){
   </div>
 
   <div>
-    <criterialabel for="criteria5">5. Methods were valid and simple </criterialabel>
+    <criterialabel for="criteria5">5. . Data are valid (true measures) and reliable (repeatable measures) </criterialabel>
     <select id="criteria5">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
-  <div> 
-    <subcriterialabel for="criteria5a">a) Methods were shown to be relevant for the problem, unless obvious to all </subcriterialabel>
+  <div>
+    <subcriterialabel for="criteria5a">a) Data were shown to be relevant to the problem </subcriterialabel>
     <select id="criteria5a">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
   <div> 
-    <subcriterialabel for="criteria5b">b) Multiple validated methods were used </subcriterialabel>
+    <subcriterialabel for="criteria5b">b) All relevant data (multiple measures) were used to help ensure validity and compensate for biases </subcriterialabel>
     <select id="criteria5b">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
-  <div> 
-    <subcriterialabel for="criteria5c">c) Methods used cumulative scientfic knowledge explicitly </subcriterialabel>
+  <div>
+    <subcriterialabel for="criteria5c">c) Longest available series used when analyzing time series data</subcriterialabel>
     <select id="criteria5c">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
   <div> 
-    <subcriterialabel for="criteria5d">d) Methods were sufficiently simple for all potential users of the findings to understand </subcriterialabel>
+    <subcriterialabel for="criteria5d">d) Reliability of data was assessed</subcriterialabel>
     <select id="criteria5d">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
-  </div> 
+  </div>
   <div>
     <label for="criteria5comments">Comments:</label>
     <textarea id="criteria5comments" rows="5" cols="50"></textarea>
   </div>
 
   <div>
-    <criterialabel for="criteria6">6. Experimental evidence was used to test all reasonable alternative hypotheses </criterialabel>
+    <criterialabel for="criteria6">6. Methods were valid (proven fit for purpose) and simple </criterialabel>
     <select id="criteria6">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
   <div> 
-    <subcriterialabel for="criteria6a">a) All reasonable hypotheses were compared using experimental evidence under explicit conditions </subcriterialabel>
+    <subcriterialabel for="criteria6a">a) Methods were shown to be relevant for the problem, unless obvious to all intended readers, users, and reviewers </subcriterialabel>
     <select id="criteria6a">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
-  </div> 
+  </div>
   <div> 
-    <subcriterialabel for="criteria6b">b) Predictive validity of hypotheses were tested using out-of-sample data </subcriterialabel>
+    <subcriterialabel for="criteria6b">b) Multiple validated methods were used </subcriterialabel>
     <select id="criteria6b">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+  <div> 
+    <subcriterialabel for="criteria6c">c) Methods used cumulative scientfic knowledge explicitly </subcriterialabel>
+    <select id="criteria6c">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+  <div> 
+    <subcriterialabel for="criteria6d">d) Methods were sufficiently simple for all potential users of the findings to understand </subcriterialabel>
+    <select id="criteria6d">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div> 
   <div>
@@ -437,34 +420,63 @@ $(document).ready(function(){
   </div>
 
   <div>
-    <criterialabel for="criteria7">7. Conclusions are consistent with the evidence </criterialabel>
+    <criterialabel for="criteria7">7. Experimental evidence was used to test all reasonable alternative hypotheses </criterialabel>
     <select id="criteria7">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div>
-
   <div> 
-    <subcriterialabel for="criteria7a">a) Conclusions are logically consistent with the evidence presented in the paper </subcriterialabel>
+    <subcriterialabel for="criteria7a">a) All reasonable hypotheses were compared using experimental evidence under explicit conditions </subcriterialabel>
     <select id="criteria7a">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div> 
-
   <div> 
-    <subcriterialabel for="criteria7b">b) Conclusions contribute to cumulative scientific knowlege on the problem addessed by the paper </subcriterialabel>
+    <subcriterialabel for="criteria7b">b) Predictive validity of hypotheses were tested using out-of-sample data </subcriterialabel>
     <select id="criteria7b">
+      <option value="False/ Unclear">False/Unclear</option>
       <option value="True">True</option>
-      <option value="False">False</option>
-      <option value="Unclear">Unclear</option>
+      <option value="N/A">N/A</option>
     </select>  
   </div> 
   <div>
     <label for="criteria7comments">Comments:</label>
     <textarea id="criteria7comments" rows="5" cols="50"></textarea>
+  </div>
+
+  <div>
+    <criterialabel for="criteria8">8. Conclusions are consistent with the evidence </criterialabel>
+    <select id="criteria8">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div>
+
+  <div> 
+    <subcriterialabel for="criteria8a">a) Conclusions are logically consistent with the evidence presented in the paper </subcriterialabel>
+    <select id="criteria8a">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div> 
+
+  <div> 
+    <subcriterialabel for="criteria8b">b) Conclusions contribute to cumulative scientific knowlege on the problem addessed by the paper </subcriterialabel>
+    <select id="criteria8b">
+      <option value="False/ Unclear">False/Unclear</option>
+      <option value="True">True</option>
+      <option value="N/A">N/A</option>
+    </select>  
+  </div> 
+  <div>
+    <label for="criteria8comments">Comments:</label>
+    <textarea id="criteria8comments" rows="5" cols="50"></textarea>
   </div>
   
   <div style="text-align:center;">

@@ -1,0 +1,40 @@
+@page {
+  size: 11in 8.5in;
+}
+
+p {
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+h1 {
+   text-align: center;
+   font-size: 14px;
+   font-family: "Times New Roman", Times, serif;
+}
+
+h2 {
+    font-size: 14px;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+	text-align: right;
+}
+
+div + div {
+  margin-top: 1em;
+}
+
+td {
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+	font-size: 12px;
+}
+
+td.thick {
+	font-weight: bold;
+	font-family: Arial Narrow,Arial,sans-serif;
+	font-size: 13px;
+}
+
+
+th {
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
