@@ -38,15 +38,11 @@ $(".tiptext").mouseover(function() {
             var date = document.getElementById("date").value;
             localStorage.setItem("date", date);
 
-            var criteria1 = document.getElementById("criteria1").value;
-            localStorage.setItem("criteria1", criteria1);
             var criteria1a = document.getElementById("criteria1a").value;
             localStorage.setItem("criteria1a", criteria1a); 
             var criteria1comments = document.getElementById("criteria1comments").value;
             localStorage.setItem("criteria1comments", criteria1comments);
-
-            var criteria2 = document.getElementById("criteria2").value;
-            localStorage.setItem("criteria2", criteria2);                 
+               
             var criteria2a = document.getElementById("criteria2a").value;
             localStorage.setItem("criteria2a", criteria2a);                 
             var criteria2b = document.getElementById("criteria2b").value;
@@ -57,9 +53,7 @@ $(".tiptext").mouseover(function() {
             localStorage.setItem("criteria2d", criteria2d); 
             var criteria2comments = document.getElementById("criteria2comments").value;
             localStorage.setItem("criteria2comments", criteria2comments);
-
-            var criteria3 = document.getElementById("criteria3").value;
-            localStorage.setItem("criteria3", criteria3);           
+           
             var criteria3a = document.getElementById("criteria3a").value;
             localStorage.setItem("criteria3a", criteria3a);  
             var criteria3b = document.getElementById("criteria3b").value;
@@ -69,8 +63,6 @@ $(".tiptext").mouseover(function() {
             var criteria3comments = document.getElementById("criteria3comments").value;
             localStorage.setItem("criteria3comments", criteria3comments);
 
-            var criteria4 = document.getElementById("criteria4").value;
-            localStorage.setItem("criteria4", criteria4);  
             var criteria4a = document.getElementById("criteria4a").value;
             localStorage.setItem("criteria4a", criteria4a);             
             var criteria4b = document.getElementById("criteria4b").value;
@@ -83,10 +75,7 @@ $(".tiptext").mouseover(function() {
             localStorage.setItem("criteria4e", criteria4e); 
             var criteria4comments = document.getElementById("criteria4comments").value;
             localStorage.setItem("criteria4comments", criteria4comments);
-
-
-            var criteria5 = document.getElementById("criteria5").value;
-            localStorage.setItem("criteria5", criteria5);             
+            
             var criteria5a = document.getElementById("criteria5a").value;
             localStorage.setItem("criteria5a", criteria5a);             
             var criteria5b = document.getElementById("criteria5b").value;
@@ -97,9 +86,7 @@ $(".tiptext").mouseover(function() {
             localStorage.setItem("criteria5d", criteria5d); 
             var criteria5comments = document.getElementById("criteria5comments").value;
             localStorage.setItem("criteria5comments", criteria5comments);
-
-            var criteria6 = document.getElementById("criteria6").value;
-            localStorage.setItem("criteria6", criteria6);             
+            
             var criteria6a = document.getElementById("criteria6a").value;
             localStorage.setItem("criteria6a", criteria6a); 
             var criteria6b = document.getElementById("criteria6b").value;
@@ -111,23 +98,23 @@ $(".tiptext").mouseover(function() {
             var criteria6comments = document.getElementById("criteria6comments").value;
             localStorage.setItem("criteria6comments", criteria6comments);
 
-            var criteria7 = document.getElementById("criteria7").value;
-            localStorage.setItem("criteria7", criteria7);             
             var criteria7a = document.getElementById("criteria7a").value;
             localStorage.setItem("criteria7a", criteria7a); 
             var criteria7b = document.getElementById("criteria7b").value;
             localStorage.setItem("criteria7b", criteria7b);          
             var criteria7comments = document.getElementById("criteria7comments").value;
             localStorage.setItem("criteria7comments", criteria7comments);
-
-            var criteria8 = document.getElementById("criteria8").value;
-            localStorage.setItem("criteria8", criteria8);             
+             
             var criteria8a = document.getElementById("criteria8a").value;
             localStorage.setItem("criteria8a", criteria8a); 
             var criteria8b = document.getElementById("criteria8b").value;
             localStorage.setItem("criteria8b", criteria8b);          
             var criteria8comments = document.getElementById("criteria8comments").value;
             localStorage.setItem("criteria8comments", criteria8comments);
+
+            var criteriaresult = document.getElementById("criteriaresult").value;
+            localStorage.setItem("criteriaresult", criteriaresult);
+            
             }
             return true;
         }
@@ -168,14 +155,8 @@ $(".tiptext").mouseover(function() {
     <p><strong> Assess compliance with lettered items under each criterion, below. Then assess whether criterion 1-8 are true based on compliance with the associated items. <i>Do not speculate.</i></strong></p> 
   </div>
 
-  <div>
-    <criterialabel for="criteria1">1. Design was objective (unbiased by advocacy for a preferred hypothesis) </criterialabel>
-    <select id="criteria1">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>
+    <h2>1. Design was objective (unbiased by advocacy for a preferred hypothesis) </h2>
+
     <div>
     <subcriterialabel for="criteria1a">a) All reasonable hypotheses, including the &quot;no change&quot; hypothesis, were represented fairly in the design </subcriterialabel>
     <select id="criteria1a">
@@ -189,14 +170,7 @@ $(".tiptext").mouseover(function() {
     <textarea id="criteria1comments" rows="5" cols="50"></textarea>
   </div>
 
-  <div>
-    <criterialabel for="criteria2">2. Findings are useful (can be applied to achieve better outcomes) </criterialabel>
-    <select id="criteria2">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>
+    <h2>2. Findings are useful (can be applied to achieve better outcomes) </h2>
   <div>
     <subcriterialabel for="criteria2a">a) Importance of problem explained in the title, abstract, result tables, or conclusions </subcriterialabel>
     <select id="criteria2a">
@@ -234,14 +208,8 @@ $(".tiptext").mouseover(function() {
     <label for="criteria2comments">Comments:</label>
     <textarea id="criteria2comments" rows="5" cols="50"></textarea>
   </div>
-  <div>
-    <criterialabel for="criteria3">3. Prior scientific knowledge was comprehensively reviewed and summarized</criterialabel>
-    <select id="criteria3">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>  
+
+    <h2>3. Prior scientific knowledge was comprehensively reviewed and summarized</h2>
   <div>
     <subcriterialabel for="criteria3a">a) Search procedures for prior useful scientific knowledge were objective and comprehensive</subcriterialabel>
     <select id="criteria3a">
@@ -272,14 +240,8 @@ $(".tiptext").mouseover(function() {
     <label for="criteria3comments">Comments:</label>
     <textarea id="criteria3comments" rows="5" cols="50"></textarea>
   </div>
-  <div>
-    <criterialabel for="criteria4">4. Disclosure is comprehensive (sufficient for understanding and replication)</criterialabel>
-    <select id="criteria4">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>
+
+    <h2>4. Disclosure is comprehensive (sufficient for understanding and replication)</h2>
   <div>
     <subcriterialabel for="criteria4a">a) Prior hypotheses clearly described (e.g. directions and magnitudes of relationships; effects of conditions)
 </subcriterialabel>
@@ -329,14 +291,8 @@ $(".tiptext").mouseover(function() {
     <textarea id="criteria4comments" rows="5" cols="50"></textarea>
   </div>
 
-  <div>
-    <criterialabel for="criteria5">5. . Data are valid (true measures) and reliable (repeatable measures) </criterialabel>
-    <select id="criteria5">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>
+
+    <h2>5. Data are valid (true measures) and reliable (repeatable measures) </h2>
   <div>
     <subcriterialabel for="criteria5a">a) Data were shown to be relevant to the problem </subcriterialabel>
     <select id="criteria5a">
@@ -374,14 +330,8 @@ $(".tiptext").mouseover(function() {
     <textarea id="criteria5comments" rows="5" cols="50"></textarea>
   </div>
 
-  <div>
-    <criterialabel for="criteria6">6. Methods were valid (proven fit for purpose) and simple </criterialabel>
-    <select id="criteria6">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>
+
+    <h2>6. Methods were valid (proven fit for purpose) and simple </h2>
   <div> 
     <subcriterialabel for="criteria6a">a) Methods were shown to be relevant for the problem, unless obvious to all intended readers, users, and reviewers </subcriterialabel>
     <select id="criteria6a">
@@ -419,14 +369,8 @@ $(".tiptext").mouseover(function() {
     <textarea id="criteria6comments" rows="5" cols="50"></textarea>
   </div>
 
-  <div>
-    <criterialabel for="criteria7">7. Experimental evidence was used to test all reasonable alternative hypotheses </criterialabel>
-    <select id="criteria7">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>
+    <h2>7. Experimental evidence was used to test all reasonable alternative hypotheses </h2>
+
   <div> 
     <subcriterialabel for="criteria7a">a) All reasonable hypotheses were compared using experimental evidence under explicit conditions </subcriterialabel>
     <select id="criteria7a">
@@ -448,14 +392,7 @@ $(".tiptext").mouseover(function() {
     <textarea id="criteria7comments" rows="5" cols="50"></textarea>
   </div>
 
-  <div>
-    <criterialabel for="criteria8">8. Conclusions are consistent with the evidence </criterialabel>
-    <select id="criteria8">
-      <option value="False/ Unclear">False/Unclear</option>
-      <option value="True">True</option>
-      <option value="N/A">N/A</option>
-    </select>  
-  </div>
+    <h2>8. Conclusions are consistent with the evidence </h2>
 
   <div> 
     <subcriterialabel for="criteria8a">a) Conclusions are logically consistent with the evidence presented in the paper </subcriterialabel>
@@ -478,6 +415,21 @@ $(".tiptext").mouseover(function() {
     <label for="criteria8comments">Comments:</label>
     <textarea id="criteria8comments" rows="5" cols="50"></textarea>
   </div>
+
+    <div class="end">
+    <endlabel for="criteriaresult">How many main criteria does this paper satisfy? </subcriterialabel>
+     <select id = "criteriaresult">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+  </select> 
+  </div>
   
   <div style="text-align:center;">
     <p><strong> Click Submit to see a printer-friendly version of your ratings, suggestions for improvements, and more data. </strong></p> 
@@ -486,8 +438,8 @@ $(".tiptext").mouseover(function() {
   <div style="text-align:center;">
     <button id="submit">Submit</button>  
   </div>
-
 </form>
+
 
 </body>
 </html>
